@@ -1,3 +1,8 @@
+## The Solar System
+Using OpenGL, We made a 3D representation of the solar system including all the planets (with the addition of Pluto and the Moon for Earth). The GUI was made in Qt Creator.
+
+# Running the Program
+Make a build directory ("mkdir build") and cd into that directory ("cd build"). Type "cmake .." and once the compiling is done, type "make && ./solar".
 
 # Concept Questions
 
