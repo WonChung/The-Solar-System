@@ -13,3 +13,14 @@ Pan and Zoom were both added in the keyPressEvent and utilized the m_view QMatri
     
 The moon was added as another planet in solarData (could have also been added on separately in parsePlanets but we chose not to).  It was then implemented separately INSIDE the matrix stack after the FIRST X TRANSLATION of the planet around the sun.  As such, the moon implementation would orbit the sun.  The rest of the implementation is just copied from the planet implementations.  
 
+* Describe how implemented right and pitch in your camera class. Do you rebuild the LookAt matrix from scratch or do you multiply the current LookAt matrix by a translation/rotation? If the latter, is the multiplication on the left or right.
+
+To create the lookAt matrix, we worked from scratch.  We utilized the eye, at, and up vertices to form two separate matrices: a rotation matrix and a translation matrix.  We then multiplied them together with matrix multiplication and set lookAt = R * T, so the translation was performed first, while the rotation was performed second.  
+
+* Describe the additional effect (besides adding the camera class and perspective matrix) you implemented.
+
+We implemented a 'bouncing' forward and back vertical motion based off of a counter(increments with the timer) and a cosine sinusoid.  Due to the cosine, the forward motion would have a (smaller) component of vertical sinusoidal motion.  
+
+* Given a 4x4 LookAt matrix could you recover any of the original parameters, eye, at, and up just by inspecting the matrix? If you can extract a parameter, describe which parameter you can extract and how. If you cannot recover a parameter, briefly describe why?  
+
+Based on examination of the printmatrix, you can extract the -eye from the 4th column by pure Translation single-axis movements.  However, if a more complex transformation is performed, then the -eye becomes distorted by the rotation and then harder to see, but still gets close.  
