@@ -1,10 +1,10 @@
-## The Solar System
+# The Solar System
 Using OpenGL, We made a 3D representation of the solar system including all the planets (with the addition of Pluto and the Moon for Earth). The GUI was made in Qt Creator.
 
-# Running the Program
+## Running the Program
 Make a build directory ("mkdir build") and cd into that directory ("cd build"). Type "cmake .." and once the compiling is done, type "make && ./solar".
 
-# Concept Questions
+## Concept Questions
 
 * Describe how you used the matrix stack to model your scene
 
@@ -29,3 +29,6 @@ We implemented a 'bouncing' forward and back vertical motion based off of a coun
 * Given a 4x4 LookAt matrix could you recover any of the original parameters, eye, at, and up just by inspecting the matrix? If you can extract a parameter, describe which parameter you can extract and how. If you cannot recover a parameter, briefly describe why?  
 
 Based on examination of the printmatrix, you can extract the -eye from the 4th column by pure Translation single-axis movements.  However, if a more complex transformation is performed, then the -eye becomes distorted by the rotation and then harder to see, but still gets close.  
+
+## Acknowledgments
+This program was for a computer science class taught by Andrew Danner at Swarthmore College. He provided starting code.
